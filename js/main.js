@@ -81,16 +81,20 @@ function scrollToPayment(skillPath) {
 
     // Update order summary inside payment section
     const pathElement = document.getElementById("payment-selected-path");
-    const amountElement = document.getElementById("payment-amount");
+    const amountElements = document.querySelectorAll("#payment-amount");
 
     if (pathElement) {
         pathElement.textContent = "Payment for " + skillPath;
     }
 
     if (skillPath === "Skill + Monetization Coaching") {
-        amountElement.textContent = "₦49,999";
+        amountElements.forEach((amountElement) => {
+            amountElement.textContent = "₦49,999";
+        });
     } else {
-        amountElement.textContent = "₦24,999";
+        amountElements.forEach((amountElement) => {
+            amountElement.textContent = "₦24,999";
+        });
     }
 
     // Update WhatsApp link with the specific skill
