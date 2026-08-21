@@ -12,6 +12,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
+function toggleMobileNav(forceState) {
+    const mobileNav = document.getElementById("mobileNav");
+    const menuIcon = document.getElementById("menuIcon");
+    const menuButton = document.querySelector('[aria-controls="mobileNav"]');
+
+    const isOpen = !mobileNav.classList.contains("hidden");
+
+    const shouldOpen = typeof forceState === "boolean"
+        ? forceState
+        : !isOpen;
+
+    if (shouldOpen) {
+        mobileNav.classList.remove("hidden");
+        menuIcon.classList.remove("bi-list");
+        menuIcon.classList.add("bi-x-lg");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuButton.querySelector(".sr-only").textContent = "Close menu";
+    } else {
+        mobileNav.classList.add("hidden");
+        menuIcon.classList.remove("bi-x-lg");
+        menuIcon.classList.add("bi-list");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.querySelector(".sr-only").textContent = "Open menu";
+    }
+}
+
 document.addEventListener("submit", function (e) {
     if (e.target.id !== "skillPathForm") return;
 
