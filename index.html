@@ -79,11 +79,11 @@
           <div id="transformation" data-component="sections/transformation.html"></div>
           <div id="skill-paths" data-component="sections/skill-paths.html"></div>
           <div id="monetization-coaching" data-component="sections/monetization-coaching.html"></div>
+          <div id="skill-path-form" data-component="sections/skill-path-form.html"></div>
           <div id="journey" data-component="sections/journey.html"></div>
-          <!-- <div id="resources" data-component="sections/resources.html"></div> -->
           <div id="proofs" data-component="sections/proofs.html"></div>
           <div id="coach" data-component="sections/coach.html"></div>
-          <div id="final-cta" data-component="sections/final-cta.html"></div>
+          <!-- <div id="final-cta" data-component="sections/final-cta.html"></div> -->
      </main>
 
      <div id="footer" data-component="sections/footer.html"></div>
@@ -96,55 +96,6 @@
 
      <!-- Page Scripts -->
      <script src="js/main.js"></script>
-
-     <script>
-          function selectSkillPath(path) {
-               const selectedPath = document.getElementById("selected-skill-path");
-               const whatsappButton = document.getElementById("skill-path-whatsapp");
-               const pricingSection = document.getElementById("skill-path-pricing");
-
-               selectedPath.textContent = path;
-
-               const message =
-                    `Hello Obong Ekemini, I am interested in joining the SkillRise-Empire training.\n\n` +
-                    `I would like to enroll in:\n${path}\n\n` +
-                    `Please send me the next steps.`;
-
-               const phone = "2349079949346";
-
-               whatsappButton.href =
-                    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-               pricingSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-               });
-          }
-
-          // function showSkillPathDetails() {
-          //      const modal = document.getElementById("skill-path-details");
-
-          //      modal.classList.remove("hidden");
-          //      modal.classList.add("flex");
-
-          //      document.body.style.overflow = "hidden";
-          // }
-
-          // function closeSkillPathDetails() {
-          //      const modal = document.getElementById("skill-path-details");
-
-          //      modal.classList.add("hidden");
-          //      modal.classList.remove("flex");
-
-          //      document.body.style.overflow = "auto";
-          // }
-
-          // document.getElementById("skill-path-details").addEventListener("click", function (event) {
-          //      if (event.target === this) {
-          //           closeSkillPathDetails();
-          //      }
-          // });
-     </script>
 
 </body>
 
