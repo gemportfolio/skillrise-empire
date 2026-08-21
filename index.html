@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <!-- =========================
+         BASIC META
+    ========================== -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description"
+          content="Catherine Anthony Ikono helps people develop practical digital skills, build personal brands, and turn their skills into remote work and income opportunities.">
+     <meta name="author" content="Catherine Anthony Ikono">
+     <meta name="robots" content="index, follow">
+
+     <!-- =========================
+         PAGE TITLE
+    ========================== -->
+     <title>
+          Catherine Anthony Ikono | Digital Skills, Remote Work & Online Income
+     </title>
+
+     <!-- =========================
+         BOOTSTRAP ICONS
+    ========================== -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+     <!-- =========================
+         TAILWIND CSS
+    ========================== -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- =========================
+         AOS ANIMATION
+    ========================== -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+     <!-- =========================
+         GEMSTACK SYSTEM
+    ========================== -->
+     <link rel="stylesheet" href="system/colors.css">
+     <link rel="stylesheet" href="system/base.css">
+     <link rel="stylesheet" href="system/typography.css">
+
+     <!-- =========================
+         FAVICON
+    ========================== -->
+     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+
+     <!-- =========================
+         OPEN GRAPH
+    ========================== -->
+     <meta property="og:title" content="Catherine Anthony Ikono | Digital Skills, Remote Work & Online Income">
+     <meta property="og:description"
+          content="Develop practical digital skills, position yourself for opportunities, and turn your skills into income.">
+     <meta property="og:type" content="website">
+     <meta property="og:url" content="https://catherineikono.gemlanding.com/">
+     <meta property="og:image" content="assets/images/catherine-og-image.jpg">
+
+     <!-- =========================
+         TWITTER / X CARD
+    ========================== -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Catherine Anthony Ikono | Digital Skills, Remote Work & Online Income">
+     <meta name="twitter:description"
+          content="Develop practical digital skills, position yourself for opportunities, and turn your skills into income.">
+     <meta name="twitter:image" content="assets/images/catherine-og-image.jpg">
+
+</head>
+
+
+<body>
+
+     <div id="navbar" data-component="sections/navbar.html"></div>
+
+     <main>
+          <div id="hero" data-component="sections/hero.html"></div>
+          <div id="transformation" data-component="sections/transformation.html"></div>
+          <div id="skill-paths" data-component="sections/skill-paths.html"></div>
+          <div id="monetization-coaching" data-component="sections/monetization-coaching.html"></div>
+          <div id="journey" data-component="sections/journey.html"></div>
+          <!-- <div id="resources" data-component="sections/resources.html"></div> -->
+          <div id="proofs" data-component="sections/proofs.html"></div>
+          <div id="coach" data-component="sections/coach.html"></div>
+          <div id="final-cta" data-component="sections/final-cta.html"></div>
+     </main>
+
+     <div id="footer" data-component="sections/footer.html"></div>
+
+     <!-- AOS -->
+     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+     <!-- GemStack Component Loader -->
+     <script src="js/components.js"></script>
+
+     <!-- Page Scripts -->
+     <script src="js/main.js"></script>
+
+     <script>
+          function selectSkillPath(path) {
+               const selectedPath = document.getElementById("selected-skill-path");
+               const whatsappButton = document.getElementById("skill-path-whatsapp");
+               const pricingSection = document.getElementById("skill-path-pricing");
+
+               selectedPath.textContent = path;
+
+               const message =
+                    `Hello Obong Ekemini, I am interested in joining the SkillRise-Empire training.\n\n` +
+                    `I would like to enroll in:\n${path}\n\n` +
+                    `Please send me the next steps.`;
+
+               const phone = "2349079949346";
+
+               whatsappButton.href =
+                    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+               pricingSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+               });
+          }
+
+          // function showSkillPathDetails() {
+          //      const modal = document.getElementById("skill-path-details");
+
+          //      modal.classList.remove("hidden");
+          //      modal.classList.add("flex");
+
+          //      document.body.style.overflow = "hidden";
+          // }
+
+          // function closeSkillPathDetails() {
+          //      const modal = document.getElementById("skill-path-details");
+
+          //      modal.classList.add("hidden");
+          //      modal.classList.remove("flex");
+
+          //      document.body.style.overflow = "auto";
+          // }
+
+          // document.getElementById("skill-path-details").addEventListener("click", function (event) {
+          //      if (event.target === this) {
+          //           closeSkillPathDetails();
+          //      }
+          // });
+     </script>
+
+</body>
+
+</html>

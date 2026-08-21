@@ -1,0 +1,129 @@
+<header
+    class="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-main)]/90 backdrop-blur-lg">
+
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+
+        <!-- Brand -->
+        <a href="#top" class="flex items-center gap-1.5">
+
+            <!-- Brand Mark -->
+            <div class="grid h-12 w-12 place-items-center rounded-xl">
+                <img src="assets/skillrise-empire-logo.jpg" />
+            </div>
+
+            <div>
+                <h1 class="text-sm font-bold text-[var(--text-primary)]">
+                    SkillRise-Empire
+                </h1>
+
+                <p class="text-xs text-[var(--text-secondary)]">
+                    Digital Skills • Career • Income
+                </p>
+            </div>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden items-center gap-7 md:flex">
+
+            <a href="#transformation"
+                class="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--color-primary)]">
+                Transformation
+            </a>
+
+            <a href="#skill-paths"
+                class="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--color-primary)]">
+                Skill Paths
+            </a>
+
+            <a href="#monetization-coaching"
+                class="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--color-primary)]">
+                Coaching
+            </a>
+
+            <a href="#proofs"
+                class="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--color-primary)]">
+                Proofs
+            </a>
+
+            <a href="#coach"
+                class="text-sm font-medium text-[var(--text-secondary)] transition hover:text-[var(--color-primary)]">
+                The Coach
+            </a>
+
+        </nav>
+
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex">
+
+            <a href="#skill-paths"
+                class="inline-flex items-center gap-2 rounded-xl bg-[var(--btn-primary-bg)] px-5 py-2.5 text-sm font-semibold text-[var(--btn-primary-text)] transition hover:bg-[var(--btn-primary-hover)]">
+
+                Start Your Skill Journey
+
+                <i class="bi bi-arrow-up-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Button -->
+        <button type="button"
+            class="inline-flex items-center justify-center rounded-xl border border-[var(--border-color)] bg-white px-3 py-2 text-[var(--text-primary)] transition hover:bg-[var(--bg-section-alt)] md:hidden"
+            aria-controls="mobileNav" aria-expanded="false" onclick="toggleMobileNav()">
+
+            <span class="sr-only">Open menu</span>
+
+            <i id="menuIcon" class="bi bi-list text-xl"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Navigation -->
+    <div id="mobileNav" class="hidden border-t border-[var(--border-color)] bg-[var(--bg-main)]">
+
+        <div class="mx-auto max-w-7xl px-4 py-5">
+
+            <div class="grid gap-2">
+
+                <a href="#skill-paths" onclick="toggleMobileNav(false)"
+                    class="rounded-xl px-3 py-3 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-section-alt)] hover:text-[var(--color-primary)]">
+                    Skill Paths
+                </a>
+
+                <a href="#what-youll-get" onclick="toggleMobileNav(false)"
+                    class="rounded-xl px-3 py-3 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-section-alt)] hover:text-[var(--color-primary)]">
+                    What You'll Get
+                </a>
+
+                <a href="#results" onclick="toggleMobileNav(false)"
+                    class="rounded-xl px-3 py-3 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-section-alt)] hover:text-[var(--color-primary)]">
+                    Results
+                </a>
+
+                <a href="#coaching" onclick="toggleMobileNav(false)"
+                    class="rounded-xl px-3 py-3 text-sm font-medium text-[var(--text-secondary)] transition hover:bg-[var(--bg-section-alt)] hover:text-[var(--color-primary)]">
+                    Coaching
+                </a>
+
+                <a href="#skill-paths" onclick="toggleMobileNav(false)"
+                    class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--btn-primary-bg)] px-5 py-3 text-sm font-semibold text-[var(--btn-primary-text)] transition hover:bg-[var(--btn-primary-hover)]">
+
+                    Start Your Skill Journey
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

@@ -1,0 +1,697 @@
+<!-- Then include provision for 2 times payment for 2nd and 3rd offer -->
+<!-- Books -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GemStack Strategy — Catherine Anthony Ikono</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1a75ff",
+            "primary-dark": "#0f4fb8"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.12em] text-primary">
+        GemStack Strategy
+      </p>
+
+      <h1 id="clientName" class="max-w-3xl text-4xl font-black tracking-tight sm:text-6xl"></h1>
+
+      <p class="mt-2 max-w-2xl text-lg leading-8 text-slate-600">
+        A simple strategic blueprint for the brand, audience, offer and landing page.
+      </p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+
+    <!-- 01–04 -->
+    <section>
+      <div class="mb-7">
+        <p class="text-sm font-bold uppercase tracking-wider text-primary">01–04</p>
+        <h2 class="text-3xl font-bold tracking-tight">The Foundation</h2>
+        <p class="mt-2 text-slate-600">The key information guiding the page strategy.</p>
+      </div>
+
+      <div id="foundationGrid" class="grid gap-5 md:grid-cols-2"></div>
+    </section>
+
+    <!-- Page Strategy -->
+    <section class="mt-20">
+      <div class="mb-7">
+        <p class="text-sm font-bold uppercase tracking-wider text-primary">05</p>
+        <h2 class="text-3xl font-bold tracking-tight">Page Strategy</h2>
+        <p class="mt-2 text-slate-600">How the landing page should move visitors toward action.</p>
+      </div>
+
+      <div id="pageStrategy" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"></div>
+    </section>
+
+    <!-- Messaging -->
+    <section class="mt-20">
+      <div class="mb-7">
+        <p class="text-sm font-bold uppercase tracking-wider text-primary">06</p>
+        <h2 class="text-3xl font-bold tracking-tight">Messaging</h2>
+        <p class="mt-2 text-slate-600">The recommended copy direction for the page.</p>
+      </div>
+
+      <div id="messaging" class="space-y-5"></div>
+    </section>
+
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-5 py-8 text-sm text-slate-600 sm:px-8">
+      GemStack Strategy · <span id="footerName"></span>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      ============================================================
+      GEMSTACK STRATEGY DATA
+      ============================================================
+
+      Keep this object as plain content/data.
+      Do not add HTML tags here.
+
+      GemStack can eventually generate this object directly from
+      onboarding responses, while the renderer below controls
+      the design.
+    */
+
+    const strategy = {
+      client: {
+        name: "SkillRise-Empire",
+        type: "Digital Skills Training & Mentorship"
+      },
+
+      business: {
+        whatTheyDo:
+          "Train, mentor and coach individuals on practical digital skills and help them turn those skills into income-generating opportunities.",
+
+        positioning:
+          "A result-oriented digital skills and monetization platform that guides people from choosing the right skill to packaging, positioning and selling that skill.",
+
+        focus: [
+          "Digital skills",
+          "Social media management",
+          "Graphic design",
+          "Video editing",
+          "AI content creation",
+          "Virtual assistance",
+          "Google Workspace",
+          "Skill monetization"
+        ]
+      },
+
+      audience: {
+        who:
+          "Beginners, unemployed individuals, stay-at-home mums, graduates, undergraduates and private school teachers.",
+
+        desiredResult:
+          "They want a clear path to a monetizable skill, practical training, a strong offer and the ability to turn their skills into income.",
+
+        problems: [
+          "They don't know which skill path is right for them.",
+          "They may have skills but don't know how to package them into an offer people will pay for.",
+          "They struggle to position themselves and attract potential clients.",
+          "They need practical guidance and accountability instead of learning theory alone.",
+          "They want to build income opportunities without leaving money on the table."
+        ]
+      },
+
+      offer: {
+        main:
+          "Training, coaching and mentorship designed to help people learn digital skills and turn those skills into practical services and income opportunities.",
+
+        offers: [
+          "Digital Skills Training",
+          "Skill Monetization Coaching",
+          "Mentorship",
+          "Social Media Management Training",
+          "Video Editing Training",
+          "Graphic Design Training",
+          "AI Content Creation Training",
+          "Virtual Assistant Training"
+        ],
+
+        value:
+          "Participants don't just leave with certificates. They build practical portfolios, defined service offers, client-ready packages, personal brand positioning, optimized profiles, proposals, outreach scripts, AI workflows and practical project experience.",
+
+        proof: [
+          "Over 2,000 individuals trained",
+          "100+ reviews and testimonials",
+          "A student landed a $70,000 remote role after graduating",
+          "Students have learned skills and started getting paid in dollars",
+          "Result-oriented training and mentorship",
+          "Guidance until success"
+        ]
+      },
+
+      brand: {
+        colors: [
+          "Sea green",
+          "Purple",
+          "Gold"
+        ],
+
+        creativeDirection:
+          "Use a bold, energetic and credible visual direction that communicates growth, opportunity and transformation. Purple can establish authority and ambition, sea green can reinforce growth and progress, while gold can highlight achievement and premium value. The design should feel practical and modern, with strong proof, clear pathways and confident calls to action.",
+
+        assets: {
+          logo: "",
+          images: [],
+          documents: []
+        },
+
+        links: {
+          website: "",
+          instagram: "",
+          facebook: "",
+          linkedin: "",
+          youtube: "",
+          tiktok: "",
+          twitter: ""
+        }
+      },
+
+      pageStrategy: [
+        "Hero",
+        "Choose Your Skill Path",
+        "What You'll Leave With",
+        "Transformation & Proof",
+        "Monetization Coaching",
+        "Final CTA"
+      ],
+
+      messaging: `
+# Hero
+
+## Don't just learn a skill. Learn how to turn it into income.
+
+Choose a practical digital skill, build the right foundation, package your expertise and get the guidance you need to start creating real opportunities.
+
+**CTA:** Choose Your Skill Path
+
+
+# Choose Your Skill Path
+
+## Find the skill path that fits you.
+
+Choose a path based on what you want to create, who you want to support or how you want to help businesses grow.
+
+### CREATE
+
+#### Digital Content & Creative Specialist
+
+Master:
+
+- Graphic Design
+- Video Editing
+- AI Content Creation
+
+You'll be able to offer:
+
+- Social media graphics
+- Reels
+- Promotional videos
+- AI visuals
+- Content creation
+- Ad creatives
+
+**Best for:** Creators, aspiring freelancers, business owners and visually creative beginners.
+
+
+### SUPPORT
+
+#### Business & Executive Virtual Assistant
+
+Master:
+
+- Virtual Assistance
+- Google Workspace
+- AI-powered productivity
+
+You'll be able to offer:
+
+- Email support
+- Research
+- Data organization
+- Google Docs, Sheets & Forms
+- Calendar management
+- Administrative support
+- AI-assisted business tasks
+
+**Best for:** Organized people who want to work behind the scenes supporting busy entrepreneurs and businesses.
+
+
+### GROW
+
+#### Social Media Growth Specialist
+
+Master:
+
+- Social Media Management
+- Graphic Design
+- Video Editing
+- AI Content Creation
+
+You'll be able to offer:
+
+- Content strategy
+- Content creation
+- Page management
+- Reels
+- Graphics
+- Scheduling
+- Community management
+- Basic analytics
+
+**Best for:** People who want to help businesses build visibility, attract attention and stay consistently active online.
+
+
+## OPTION 1 — STARTER
+
+### Choose Your Skill Path
+
+**₦24,999**
+
+You get:
+
+- Your chosen career path
+- Practical training
+- Projects and assignments
+- Learning resources
+- Certificate
+- Community and support
+
+**Best for:** People who are comfortable learning independently.
+
+**CTA:** Start My Skill Journey
+
+
+# What You'll Leave With
+
+## You won't just leave with a certificate.
+
+You'll leave with practical assets you can use to start selling.
+
+- A practical portfolio
+- Defined service offers
+- Client-ready service packages
+- Personal brand positioning
+- Professional profile/CV optimization
+- Proposal templates
+- Client outreach scripts
+- AI productivity workflows
+- Practical projects
+- Certificate of completion
+- Private learning community
+- Guidance on finding potential clients
+
+
+# Transformation & Proof
+
+## From learning skills to creating opportunities.
+
+SkillRise-Empire doesn't stop at teaching you a skill. The goal is to help you understand how to apply it, package it and use it to create opportunities.
+
+**Proof:** Over 2,000 individuals trained with 100+ reviews and testimonials.
+
+**Visual:** Use the supplied testimonial screenshot here as transformation proof.
+
+**CTA:** Start Building Your Skill
+
+
+# Monetization Coaching
+
+## Your skill is only the beginning.
+
+Learning a skill is one thing. Knowing how to turn that skill into an income opportunity is another.
+
+### OPTION 2 — MOST POPULAR
+
+## Skill + Monetization Coaching
+
+**₦49,999**
+
+Everything in Starter PLUS:
+
+- Skill-to-service roadmap
+- Portfolio guidance
+- Offer creation
+- Pricing guidance
+- Personal positioning
+- Client acquisition strategy
+- Outreach and pitch guidance
+- Work reviews and corrections
+- Accountability
+- Direct coaching and mentorship
+
+**Best for:** People who don't just want to learn—they want guidance on turning the skill into an income opportunity.
+
+**CTA:** I Want the Complete Experience
+
+
+## The Monetization Path
+
+### 1. Choose
+
+Find the skill path that fits your strengths, interests and available resources.
+
+### 2. Build
+
+Turn your skill into a practical service people can actually buy.
+
+### 3. Position
+
+Create an offer and personal positioning that makes clients understand why they should choose you.
+
+### 4. Practice
+
+Work on realistic projects—not just theoretical assignments.
+
+### 5. Find
+
+Learn practical ways to identify and approach potential clients.
+
+### 6. Improve
+
+Get feedback when you're stuck instead of spending weeks guessing.
+
+### 7. Execute
+
+Stay accountable until you start taking real action.
+
+
+# Final CTA
+
+## Stop learning without a clear path.
+
+Choose the skill you want to master, build something you can sell and get the guidance you need to move from learning to earning.
+
+**CTA:** Start Your Journey
+`
+    };
+
+    // Escape HTML
+    const escapeHTML = (value) =>
+      String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+    // List HTML
+    const listHTML = (items) => `
+      <ul class="mt-4 space-y-2">
+        ${items.map(item => `
+          <li class="flex gap-2 text-slate-600">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+            <span>${escapeHTML(item)}</span>
+          </li>
+        `).join("")}
+      </ul>
+    `;
+
+    // Show value
+    const showValue = (value) =>
+      value && String(value).trim()
+        ? escapeHTML(value)
+        : "Empty";
+
+    // Show link
+    const showLink = (label, url) => {
+      if (!url || !String(url).trim()) {
+        return `<div class="py-1 text-slate-400">${escapeHTML(label)}: <span>Empty</span></div>`;
+      }
+
+      return `
+    <div class="py-1">
+      <span class="font-medium text-slate-600">${escapeHTML(label)}:</span>
+      <a
+        href="${escapeHTML(url)}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-1 text-primary hover:underline break-all"
+      >
+        ${escapeHTML(url)}
+      </a>
+    </div>
+  `;
+    };
+
+    // Show image
+    const showImage = (src, alt = "Logo") => {
+      if (!src || !String(src).trim()) {
+        return `<p class="mt-2 text-slate-400">Empty</p>`;
+      }
+
+      return `
+    <img
+      src="${escapeHTML(src)}"
+      alt="${escapeHTML(alt)}"
+      class="mt-3 max-h-20 max-w-[180px] object-contain"
+    />
+  `;
+    };
+
+    // Show list
+    const showList = (items) => {
+      if (!Array.isArray(items) || items.length === 0) {
+        return `<p class="mt-2 text-slate-400">Empty</p>`;
+      }
+
+      return listHTML(items);
+    };
+
+    // Foundation cards
+    const foundationCards = [
+      {
+        number: "01",
+        title: "Business",
+        content: `
+          <p class="text-slate-600">${escapeHTML(strategy.business.whatTheyDo)}</p>
+
+          <div class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Positioning</p>
+            <p class="mt-2 text-slate-600">${escapeHTML(strategy.business.positioning)}</p>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Focus</p>
+            ${listHTML(strategy.business.focus)}
+          </div>
+        `
+      },
+      {
+        number: "02",
+        title: "Audience",
+        content: `
+          <p class="text-slate-600">${escapeHTML(strategy.audience.who)}</p>
+
+          <div class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">What they want</p>
+            <p class="mt-2 text-slate-600">${escapeHTML(strategy.audience.desiredResult)}</p>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Main problems</p>
+            ${listHTML(strategy.audience.problems)}
+          </div>
+        `
+      },
+      {
+        number: "03",
+        title: "Offer",
+        content: `
+              <p class="text-slate-600">${escapeHTML(strategy.offer.main)}</p>
+
+              <div class="mt-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Offers</p>
+                ${listHTML(strategy.offer.offers)}
+              </div>
+
+              <div class="mt-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Core value</p>
+                <p class="mt-2 text-slate-600">${escapeHTML(strategy.offer.value)}</p>
+              </div>
+
+              <div class="mt-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Proof</p>
+                ${listHTML(strategy.offer.proof)}
+              </div>
+            `
+      },
+      {
+        number: "04",
+        title: "Brand",
+        content: `
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Colors
+        </p>
+
+        <p class="mt-2 text-slate-600">
+          ${strategy.brand.colors?.length
+            ? escapeHTML(strategy.brand.colors.join(", "))
+            : "Empty"}
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Creative Direction
+        </p>
+
+        <p class="mt-2 text-slate-600">
+          ${showValue(strategy.brand.creativeDirection)}
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Logo
+        </p>
+
+        ${showImage(strategy.brand.assets.logo, "Brand Logo")}
+      </div>
+
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Images
+        </p>
+
+        ${showList(strategy.brand.assets.images)}
+      </div>
+
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Links
+        </p>
+
+        <div class="mt-2 text-sm">
+          ${showLink("Website", strategy.brand.links.website)}
+          ${showLink("Instagram", strategy.brand.links.instagram)}
+          ${showLink("Facebook", strategy.brand.links.facebook)}
+          ${showLink("LinkedIn", strategy.brand.links.linkedin)}
+          ${showLink("YouTube", strategy.brand.links.youtube)}
+          ${showLink("TikTok", strategy.brand.links.tiktok)}
+          ${showLink("Twitter / X", strategy.brand.links.twitter)}
+        </div>
+      </div>`
+      }
+    ];
+
+    // Client Name
+    document.getElementById("clientName").textContent = strategy.client.name;
+    document.getElementById("footerName").textContent = strategy.client.name;
+
+    // Foundation Grid
+    document.getElementById("foundationGrid").innerHTML =
+      foundationCards.map(card => `
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+          <div class="flex items-center gap-3">
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-blue-50 text-sm font-bold text-primary">
+              ${card.number}
+            </span>
+            <h3 class="text-xl font-bold">${card.title}</h3>
+          </div>
+
+          <div class="mt-6 leading-7">
+            ${card.content}
+          </div>
+        </article>
+      `).join("");
+
+    // Page Strategy
+    document.getElementById("pageStrategy").innerHTML =
+      strategy.pageStrategy.map((title, index) => `
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center gap-3">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-blue-50 text-primary">
+              <i class="bi bi-${index + 1}-circle-fill"></i>
+            </span>
+            <h3 class="font-bold">${escapeHTML(title)}</h3>
+          </div>
+        </article>
+      `).join("");
+
+    // Render Page Strategy
+    const renderMarkdown = (markdown) => {
+      const lines = markdown.trim().split("\n");
+      let output = "";
+
+      for (const line of lines) {
+        if (line.startsWith("# ")) {
+          output += `
+            <div class="mt-10 first:mt-0">
+              <h3 class="border-b border-slate-200 pb-3 text-sm font-bold uppercase tracking-wider text-primary">
+                ${escapeHTML(line.slice(2))}
+              </h3>
+            </div>
+          `;
+        } else if (line.startsWith("## ")) {
+          output += `
+            <h4 class="mt-5 text-2xl font-bold leading-tight text-slate-900">
+              ${escapeHTML(line.slice(3))}
+            </h4>
+          `;
+        } else if (line.startsWith("**CTA:**")) {
+          output += `
+            <p class="mt-4 text-sm font-bold text-primary">
+              ${escapeHTML(line.replace("**CTA:**", "CTA:"))}
+            </p>
+          `;
+        } else if (line.trim()) {
+          output += `
+            <p class="mt-4 max-w-3xl leading-7 text-slate-600">
+              ${escapeHTML(line)}
+            </p>
+          `;
+        }
+      }
+
+      return output;
+    };
+
+    // Messaging
+    document.getElementById("messaging").innerHTML = `
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+        ${renderMarkdown(strategy.messaging)}
+      </div>
+    `;
+
+  </script>
+</body>
+
+</html>

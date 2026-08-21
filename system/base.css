@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box !important;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+button:hover {
+    cursor: pointer !important;
+}
