@@ -39,45 +39,40 @@ function toggleMobileNav(forceState) {
     }
 }
 
-// Set the countdown deadline to 48 hours from page load
-const enrollmentDeadline =
-    Date.now() + (2 * 24 * 60 * 60 * 1000);
+// 12-hour urgency countdown
+const TWELVE_HOURS = 12 * 60 * 60 * 1000;
+// get the deadline from local storage
+function getUrgencyDeadline() {
+    let deadline = localStorage.getItem("skillRiseUrgencyDeadline");
 
-// Update urgency countdown
+    if (!deadline) {
+        deadline = Date.now() + TWELVE_HOURS;
+        localStorage.setItem("skillRiseUrgencyDeadline", deadline);
+    }
+
+    return Number(deadline);
+}
+// update the countdown
 function updateUrgencyCountdown() {
-    const now = Date.now();
-    const distance = enrollmentDeadline - now;
+    const distance = getUrgencyDeadline() - Date.now();
 
-    const daysElement = document.getElementById("urgency-days");
     const hoursElement = document.getElementById("urgency-hours");
     const minutesElement = document.getElementById("urgency-minutes");
     const secondsElement = document.getElementById("urgency-seconds");
 
-    if (
-        !daysElement ||
-        !hoursElement ||
-        !minutesElement ||
-        !secondsElement
-    ) {
+    if (!hoursElement || !minutesElement || !secondsElement) {
         return;
     }
 
     if (distance <= 0) {
-        daysElement.textContent = "00";
         hoursElement.textContent = "00";
         minutesElement.textContent = "00";
         secondsElement.textContent = "00";
-
         return;
     }
 
-    const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-    );
-
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
+        distance / (1000 * 60 * 60)
     );
 
     const minutes = Math.floor(
@@ -89,9 +84,6 @@ function updateUrgencyCountdown() {
         (distance % (1000 * 60)) /
         1000
     );
-
-    daysElement.textContent =
-        String(days).padStart(2, "0");
 
     hoursElement.textContent =
         String(hours).padStart(2, "0");
