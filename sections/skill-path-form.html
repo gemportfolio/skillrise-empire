@@ -18,36 +18,11 @@
 
         <form id="skillPathForm" class="space-y-5 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
 
-            <!-- Selected Skill Path -->
-            <div>
-                <label for="selected-skill-path" class="mb-2 block text-sm font-semibold text-gray-900">
-                    Selected Skill Path
-                </label>
-
-
-                <select id="selected-skill-path" name="selected-skill-path" required
-                    class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10">
-                    <option value="" disabled selected>
-                        Select a skill path
-                    </option>
-                    <option value="Digital Content & Creative Specialist">
-                        Digital Content & Creative Specialist
-                    </option>
-                    <option value="Business & Executive Virtual Assistant">
-                        Business & Executive Virtual Assistant
-                    </option>
-                    <option value="Social Media Growth Specialist">
-                        Social Media Growth Specialist
-                    </option>
-                </select>
-            </div>
-
             <!-- Name -->
             <div>
                 <label for="full-name" class="mb-2 block text-sm font-semibold text-gray-900">
                     Name
                 </label>
-
                 <input type="text" id="full-name" name="full_name" required placeholder="Enter your full name"
                     class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10">
             </div>
@@ -57,7 +32,6 @@
                 <label for="location" class="mb-2 block text-sm font-semibold text-gray-900">
                     Location
                 </label>
-
                 <input type="text" id="location" name="location" required placeholder="City / State / Country"
                     class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10">
             </div>
@@ -67,7 +41,6 @@
                 <label for="email" class="mb-2 block text-sm font-semibold text-gray-900">
                     Email Address
                 </label>
-
                 <input type="email" id="email" name="email" required placeholder="you@example.com"
                     class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10">
             </div>
@@ -75,9 +48,8 @@
             <!-- WhatsApp -->
             <div>
                 <label for="whatsapp" class="mb-2 block text-sm font-semibold text-gray-900">
-                    WhatsApp Number
+                    Contact (WhatsApp)
                 </label>
-
                 <input type="tel" id="whatsapp" name="whatsapp" required placeholder="e.g. 08012345678"
                     class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10">
             </div>
@@ -93,8 +65,14 @@
                     <option value="" disabled selected>
                         Select your field of interest
                     </option>
-                    <option value="Skill alone">
-                        Skill alone
+                    <option value="Digital Content & Creative Specialist">
+                        Digital Content & Creative Specialist
+                    </option>
+                    <option value="Business & Executive Virtual Assistant">
+                        Business & Executive Virtual Assistant
+                    </option>
+                    <option value="Social Media Growth Specialist">
+                        Social Media Growth Specialist
                     </option>
                     <option value="Skill + Monetization Coaching">
                         Skill + Monetization Coaching
@@ -129,14 +107,35 @@
                 </div>
             </div>
 
-            <!-- Experience / Questions -->
+            <!-- Previous Experience/Questions/Challenges -->
             <div>
                 <label for="experience" class="mb-2 block text-sm font-semibold text-gray-900">
-                    Questions, Challenges or Previous Experience
+                    Share your experience, questions/challenges
                 </label>
 
-                <textarea id="experience" name="experience" rows="5"
-                    placeholder="Kindly share your questions, challenges, or previous experience..."
+                <textarea id="experience" name="experience" rows="4"
+                    placeholder="Share your experience, questions, or challenges..."
+                    class="w-full resize-none rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10"></textarea>
+            </div>
+
+            <!-- Goal -->
+            <div>
+                <label for="goal" class="mb-2 block text-sm font-semibold text-gray-900">
+                    What is your goal if you decide to start this journey today?
+                </label>
+
+                <textarea id="goal" name="goal" rows="4" placeholder="Tell us what you hope to achieve..."
+                    class="w-full resize-none rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10"></textarea>
+            </div>
+
+            <!-- Safety / Comfort -->
+            <div>
+                <label for="comfort" class="mb-2 block text-sm font-semibold text-gray-900">
+                    What will make you feel safe and comfortable to begin your learning with us?
+                </label>
+
+                <textarea id="comfort" name="comfort" rows="4"
+                    placeholder="Tell us what would give you confidence to get started..."
                     class="w-full resize-none rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[var(--btn-primary-bg)] focus:ring-2 focus:ring-[var(--btn-primary-bg)]/10"></textarea>
             </div>
 
@@ -281,9 +280,17 @@
                                     Account Number
                                 </p>
 
-                                <p class="mt-1 text-xl font-extrabold tracking-wider">
-                                    2263091306
-                                </p>
+                                <div class="mt-1 flex items-center gap-2">
+                                    <p id="account-number" class="text-xl font-extrabold tracking-wider">
+                                        2263091306
+                                    </p>
+
+                                    <button type="button" onclick="copyAccountNumber()"
+                                        class="flex h-8 w-8 items-center justify-center rounded-lg text-white/60 transition hover:bg-white/10 hover:text-white"
+                                        aria-label="Copy account number">
+                                        <i id="copy-account-icon" class="bi bi-copy"></i>
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="border-t border-white/10 pt-4">
@@ -302,7 +309,7 @@
 
                     <!-- WhatsApp CTA -->
                     <a id="payment-whatsapp" href="#" target="_blank" rel="noopener noreferrer"
-                        class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-gold)] px-6 py-4 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
+                        class="mt-6 inline-flex relative w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-gold)] px-6 py-4 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
                         I've Made Payment — Send Receipt
                         <i class="bi bi-whatsapp text-lg"></i>
                     </a>

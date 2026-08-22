@@ -24,3 +24,39 @@ section[id] {
 button:hover {
     cursor: pointer !important;
 }
+
+@keyframes button-glow {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 0.2;
+    }
+}
+
+@keyframes button-glow-2 {
+
+    0%,
+    100% {
+        transform: scale(0.94);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.04);
+        opacity: 0.2;
+    }
+}
+
+.button-glow {
+    animation: button-glow 1.5s ease-in-out infinite;
+}
+
+.button-glow-2 {
+    animation: button-glow-2 1.5s ease-in-out infinite;
+}

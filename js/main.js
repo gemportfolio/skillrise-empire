@@ -45,9 +45,6 @@ document.addEventListener("submit", function (e) {
 
     const form = e.target;
 
-    const selectedPath =
-        form.querySelector("#selected-skill-path").value;
-
     const name =
         form.querySelector("#full-name").value.trim();
 
@@ -71,19 +68,29 @@ document.addEventListener("submit", function (e) {
     const experience =
         form.querySelector("#experience").value.trim();
 
+    const goal =
+        form.querySelector("#goal").value.trim();
+
+    const comfort =
+        form.querySelector("#comfort").value.trim();
+
     const message =
         `Hello Obong Ekemini, I am interested in joining SkillRise-Empire.\n\n` +
-        `*Registration Details*\n` +
+        `*REGISTRATION DETAILS*\n` +
         `Name: ${name}\n` +
         `Location: ${location}\n` +
         `Email: ${email}\n` +
         `WhatsApp: ${whatsapp}\n\n` +
-        `*Training Details*\n` +
-        `Skill Path: ${selectedPath}\n` +
-        `Interest: ${fieldOfInterest}\n` +
+        `*FIELD OF INTEREST*\n` +
+        `${fieldOfInterest}\n\n` +
+        `*PREVIOUS DIGITAL SKILL EXPERIENCE*\n` +
         `Purchased a digital skill before: ${purchasedSkill}\n\n` +
-        `*Questions / Challenges / Experience*\n` +
+        `*EXPERIENCE / QUESTIONS / CHALLENGES*\n` +
         `${experience || "None"}\n\n` +
+        `*GOAL*\n` +
+        `${goal || "Not provided"}\n\n` +
+        `*SAFETY / COMFORT*\n` +
+        `${comfort || "Not provided"}\n\n` +
         `Please send me the next steps.`;
 
     const phone = "2349079949346";
@@ -93,7 +100,6 @@ document.addEventListener("submit", function (e) {
 
     window.open(whatsappUrl, "_blank");
 });
-
 
 function scrollToPayment(skillPath) {
     // Scroll to payment section
@@ -129,4 +135,19 @@ function scrollToPayment(skillPath) {
         const baseMessage = "Hello Obong Ekemini, I have made my payment and would like to enroll in:";
         whatsappLink.href = `https://wa.me/2349079949346?text=${encodeURIComponent(baseMessage + "\n\n" + skillPath)}`;
     }
+}
+
+function copyAccountNumber() {
+    const accountNumber = document.getElementById("account-number").textContent.trim();
+    const copyIcon = document.getElementById("copy-account-icon");
+
+    navigator.clipboard.writeText(accountNumber).then(() => {
+        copyIcon.classList.remove("bi-copy");
+        copyIcon.classList.add("bi-check-lg");
+
+        setTimeout(() => {
+            copyIcon.classList.remove("bi-check-lg");
+            copyIcon.classList.add("bi-copy");
+        }, 2000);
+    });
 }
