@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
     await loadComponents();
 
     if (typeof AOS !== "undefined") {
@@ -9,9 +8,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    updateUrgencyCountdown();
+    setInterval(updateUrgencyCountdown, 1000);
 });
 
-
+// Toggle mobile navigation
 function toggleMobileNav(forceState) {
     const mobileNav = document.getElementById("mobileNav");
     const menuIcon = document.getElementById("menuIcon");
@@ -36,6 +37,70 @@ function toggleMobileNav(forceState) {
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.querySelector(".sr-only").textContent = "Open menu";
     }
+}
+
+// Set the countdown deadline to 48 hours from page load
+const enrollmentDeadline =
+    Date.now() + (2 * 24 * 60 * 60 * 1000);
+
+// Update urgency countdown
+function updateUrgencyCountdown() {
+    const now = Date.now();
+    const distance = enrollmentDeadline - now;
+
+    const daysElement = document.getElementById("urgency-days");
+    const hoursElement = document.getElementById("urgency-hours");
+    const minutesElement = document.getElementById("urgency-minutes");
+    const secondsElement = document.getElementById("urgency-seconds");
+
+    if (
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+    ) {
+        return;
+    }
+
+    if (distance <= 0) {
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
+
+    daysElement.textContent =
+        String(days).padStart(2, "0");
+
+    hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+    minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+    secondsElement.textContent =
+        String(seconds).padStart(2, "0");
 }
 
 document.addEventListener("submit", function (e) {

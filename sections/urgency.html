@@ -1,0 +1,82 @@
+<!-- =========================
+     STICKY URGENCY BAR
+========================== -->
+<div id="urgency-section"
+    class="fixed inset-x-0 bottom-0 z-50 border-t border-[var(--color-accent)] bg-[var(--color-primary-dark)] text-white shadow-[0_-8px_30px_rgba(0,0,0,0.15)]">
+
+    <div class="mx-auto flex max-w-7xl items-center gap-3 px-3 py-3 sm:px-6">
+
+        <!-- Info -->
+        <div class="min-w-0 flex-1">
+
+            <div class="flex items-center gap-2 text-xs sm:text-sm">
+
+                <span class="font-extrabold text-[var(--color-accent-light)]">
+                    <i class="bi bi-hourglass-split mr-1"></i>
+                    <span class="hidden sm:inline">
+                        ENROLLMENT CLOSING SOON
+                    </span>
+                    <span class="sm:hidden">
+                        CLOSING SOON
+                    </span>
+                </span>
+
+            </div>
+
+            <div class="mt-1 flex flex-wrap items-center gap-x-2 text-xs text-white/70">
+
+                <span>
+                    <strong id="slots-taken" class="text-white">
+                        7
+                    </strong>
+                    slots taken
+                </span>
+
+                <span class="text-white/30">•</span>
+
+                <span>
+                    <strong id="slots-left" class="text-[var(--color-accent-light)]">
+                        3
+                    </strong>
+                    left
+                </span>
+
+                <span class="text-white/30">•</span>
+
+                <span>
+                    <span class="hidden sm:inline">
+                        Closes in
+                    </span>
+
+                    <strong class="text-white">
+                        <span id="urgency-days">00</span>d
+                        <span id="urgency-hours">00</span>h
+                        <span id="urgency-minutes">00</span>m
+                        <span id="urgency-seconds">00</span>s
+                    </strong>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+        <a href="#skill-paths"
+            class="shrink-0 inline-flex items-center justify-center gap-1.5 rounded-xl bg-[var(--color-accent)] px-3.5 py-2.5 text-xs font-extrabold text-[var(--text-white)] transition hover:bg-[var(--color-accent-dark)] sm:px-5 sm:text-sm">
+
+            <span class="hidden sm:inline">
+                Secure My Spot
+            </span>
+
+            <span class="sm:hidden">
+                Enroll
+            </span>
+
+            <i class="bi bi-arrow-up-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
