@@ -41,35 +41,47 @@ function toggleMobileNav(forceState) {
 
 // 12-hour urgency countdown
 const TWELVE_HOURS = 12 * 60 * 60 * 1000;
-// get the deadline from local storage
+
+// Get the deadline from local storage
 function getUrgencyDeadline() {
     let deadline = localStorage.getItem("skillRiseUrgencyDeadline");
 
-    if (!deadline) {
+    if (!deadline || Number(deadline) <= Date.now()) {
         deadline = Date.now() + TWELVE_HOURS;
-        localStorage.setItem("skillRiseUrgencyDeadline", deadline);
+
+        localStorage.setItem(
+            "skillRiseUrgencyDeadline",
+            deadline
+        );
     }
 
     return Number(deadline);
 }
-// update the countdown
+
+// Update the countdown
 function updateUrgencyCountdown() {
-    const distance = getUrgencyDeadline() - Date.now();
 
-    const hoursElement = document.getElementById("urgency-hours");
-    const minutesElement = document.getElementById("urgency-minutes");
-    const secondsElement = document.getElementById("urgency-seconds");
+    const distance =
+        getUrgencyDeadline() - Date.now();
 
-    if (!hoursElement || !minutesElement || !secondsElement) {
+    const hoursElement =
+        document.getElementById("urgency-hours");
+
+    const minutesElement =
+        document.getElementById("urgency-minutes");
+
+    const secondsElement =
+        document.getElementById("urgency-seconds");
+
+
+    if (
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+    ) {
         return;
     }
 
-    if (distance <= 0) {
-        hoursElement.textContent = "00";
-        minutesElement.textContent = "00";
-        secondsElement.textContent = "00";
-        return;
-    }
 
     const hours = Math.floor(
         distance / (1000 * 60 * 60)
@@ -84,6 +96,7 @@ function updateUrgencyCountdown() {
         (distance % (1000 * 60)) /
         1000
     );
+
 
     hoursElement.textContent =
         String(hours).padStart(2, "0");
